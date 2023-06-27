@@ -50,7 +50,16 @@ public class Student extends Person {
     public void displayInfo() {
         super.displayInfo();
         System.out.println("Program: " + program + 
-            "\nStudent ID: " + studentID);
+            "\nStudent ID: " + studentID + 
+            "\n");
+    }
+
+    public void setProgram(String program) {
+        this.program = program;
+    }
+
+    public void setSchoolYear(int year) {
+        this.schoolYear = year;
     }
 }
 
@@ -73,7 +82,7 @@ abstract class Person {
         return firstName;
     }
     
-    public char getsex() {
+    public char getSex() {
         return sex;
     }
     
@@ -86,13 +95,25 @@ abstract class Person {
     }
 
     public String toString() {
-        return getFullName() + "-" + getsex() + "-" + getAge() + "-" + getContactNum();
+        return getFullName() + "-" + 
+            getSex() + "-" + 
+            getAge() + "-" + 
+            (convertContactNum(contactNum));
+    }
+
+    private String convertContactNum(long contactNum) {
+        if (contactNum == 0) return "0";
+        else return "0" + contactNum;
     }
 
     public void displayInfo() {
         System.out.println("\nName: " + getFullName() + 
-        "\nsex: " + getsex() +
+        "\nsex: " + getSex() +
         "\nAge: " + getAge() + 
-        "\nContact No: " + getContactNum());
+        "\nContact No: " + convertContactNum(getContactNum()));
+    }
+
+    protected int generateRandomID() {
+        return (int) Math.floor(Math.random() * 999999);
     }
 }

@@ -86,10 +86,10 @@ public class DisplayInfo {
             lastName = input.nextLine(); // to flush
             lastName = input.nextLine();
 
-            System.out.print("\nPlease enter the first name of the student: ");
+            System.out.print("Please enter the first name of the student: ");
             firstName = input.nextLine();
             
-            System.out.print("\nPlease enter the program name of the student: ");
+            System.out.print("Please enter the program name of the student: ");
             program = input.nextLine().toUpperCase();
 
             String fullName = lastName + ", " + firstName;
@@ -103,11 +103,11 @@ public class DisplayInfo {
 
             // checks if the return object is empty or not
             if (student != null) {
-                System.out.println("Found it:" +
+                System.out.println("\nFound it:" +
                     "\n================================================");
                 student.displayInfo();
             } else {
-                System.out.println("Error: Student not found.");
+                System.out.println("\nError: Student not found.");
             }
 
             // exits the loop for this method

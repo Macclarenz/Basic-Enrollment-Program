@@ -69,6 +69,24 @@ public class ListOfStudents {
         return foundStudent;
     }
 
+    public Student getStudentFromAllProgram(String name, boolean remove) {
+        Student foundStudent = null;
+        foundStudent = getStudentFromAllProgram(name);
+
+        if (!remove) return foundStudent;
+        else removeStudent(list_students, foundStudent);
+
+        return foundStudent;
+    }
+
+    protected void addStudent(Student student) {
+        list_students.add(student);
+    }
+
+    protected void removeStudent(List<Student> students, Student student) {
+        students.remove(student);
+    }
+
     // BSIT LIST
     public void displayBSITStudents() {
         for (Student student : list_students_BSIT) {
@@ -86,6 +104,10 @@ public class ListOfStudents {
         }
 
         return foundStudent;
+    }
+
+    public Student getStudentFromBSIT(String name, boolean remove) {
+        return getStudentFromAllProgram(name, remove);
     }
 
     // BSTM LIST
@@ -106,6 +128,10 @@ public class ListOfStudents {
 
         return foundStudent;
     }
+    
+    public Student getStudentFromBSTM(String name, boolean remove) {
+        return getStudentFromAllProgram(name, remove);
+    }
 
     // BSHM LIST
     public void displayBSHMStudents() {
@@ -113,6 +139,8 @@ public class ListOfStudents {
             student.displayInfo();
         }
     }
+
+    
 
     public Student getStudentFromBSHM(String name) {
         Student foundStudent = null;
@@ -124,6 +152,10 @@ public class ListOfStudents {
         }
 
         return foundStudent;
+    }
+
+    public Student getStudentFromBSHM(String name, boolean remove) {
+        return getStudentFromAllProgram(name, remove);
     }
 
     // BSBM LIST
@@ -145,6 +177,10 @@ public class ListOfStudents {
         return foundStudent;
     }
 
+    public Student getStudentFromBSBM(String name, boolean remove) {
+        return getStudentFromAllProgram(name, remove);
+    }
+
     // BSCS LIST
     public void displayBSCSStudents() {
         for (Student student : list_students_BSCS) {
@@ -162,5 +198,9 @@ public class ListOfStudents {
         }
 
         return foundStudent;
+    }
+
+    public Student getStudentFromBSCS(String name, boolean remove) {
+        return getStudentFromAllProgram(name, remove);
     }
 }
